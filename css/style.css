@@ -1,0 +1,117 @@
+html {
+    box-sizing: border-box;
+    background: #ffc600;
+    font-size: 10px;
+    font-family: 'Knewave', cursive;
+}
+
+body {
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.singlePanel {
+    background: #6b0f9c;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.2);
+    color: black;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+    text-align: center;
+    align-items: center;
+    transition: all 0.7s;
+    font-size: 20px;
+    background-size: cover;
+    /*img cover all div(img will by scale)*/
+    background-position: center;
+    /*use center of bacground element (normaly left top)*/
+    flex: 1;
+    /*use all space same for each panel*/
+    display: flex;
+    /*make it flex (columns side by side)*/
+    flex-direction: column;
+    /*Transform column to center when they are flex*/
+    justify-content: center;
+    /*justyfy ftom to to center*/
+    cursor: pointer;
+}
+
+/*the text containers in singlePanel*/
+
+.singlePanel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    /*center X*/
+    align-items: center;
+    /*center Y*/
+}
+
+.singlePanel p:first-child {
+    /*it makes text over screen*/
+    transform: translateY(-100%);
+}
+
+.singlePanel.open-active p:first-child {
+    /*if the singlePanel will have open-active class then translateY 0 to the first child*/
+    transform: translateY(0);
+}
+
+.singlePanel p:last-child {
+    /*it makes text over screen*/
+    transform: translateY(100%);
+}
+
+.singlePanel.open-active p:last-child {
+    /*if the singlePanel will have open-active class then translateY 0 to the last child*/
+    transform: translateY(0);
+}
+
+.singlePanel p {
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.singlePanel p:nth-child(2) {
+    /*use 2nd child of class singlePanel p - names of charakters*/
+    font-size: 3em;
+}
+
+
+.singlePanel.open {
+    flex: 4;
+    /*when singlePaneg will have open class will got 4times more space(rest panels are flex: 1;)*/
+    font-size: 30px;
+    /*normaly font size 20px*/
+}
+
+
+/*IMAGES*/
+
+.gustavo {
+    background-image: url(../img/gustavo.jpg);
+}
+
+.jessie {
+    background-image: url(../img/jessie.jpg);
+}
+
+.walter {
+    background-image: url(../img/walter.jpg);
+}
+
+.mike {
+    background-image: url(../img/mike.jpg);
+}
